@@ -36,7 +36,7 @@ export default {
     ): Promise<Response> {
       const query = url.searchParams.get("q");
 
-      let redirectUrl = new URL("https://www.perplexity.ai/search");
+      let redirectUrl = new URL("https://www.google.com/search");
 
       const swapLastQuery = async (query: string) => {
         if (query?.includes("!!")) {
@@ -75,6 +75,12 @@ export default {
           redirectUrl.searchParams.set(
             "q",
             await swapLastQuery(query.replace("!e", ""))
+          );
+        } else if (query.includes("!a")) {
+          redirectUrl = new URL("https://source.android.com/s/results");
+          redirectUrl.searchParams.set(
+            "q",
+            await swapLastQuery(query.replace("!a", ""))
           );
         } else {
           redirectUrl.searchParams.set("q", await swapLastQuery(query));

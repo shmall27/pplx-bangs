@@ -2,5 +2,5 @@ name = "workers"
 main = "src/index.ts"
 compatibility_date = "2023-12-08"
 kv_namespaces = [
-    { binding = "QUERY_CACHE", id = "7e839fd5c0014f6ab33ffe93036eac7e" }
+    { binding = "QUERY_CACHE", id = "df7169e8487f4499b0ff31213d76fd08" }
 ]
